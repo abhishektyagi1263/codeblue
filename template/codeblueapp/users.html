@@ -6,28 +6,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   </head>
-  <body>
-    <h1> Currenty Enrolled Students </h1>
-    {% if users %}
-      <table class="table table-hover" style="color:black;">
-        <thead>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-        </thead>
-
-        {% for student in usem %}
-
-          <tr>
-            <td>{{ student.first_name }}</td>
-            <td>{{ student.last_name }}</td>
-            <td>{{ student.email }}</td>
-          </tr>
+  <body style="background-color:#c7db95">
+    <div class="" style="text-align:center;height: 40em;position: relative; ">
+      <div style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);background-color:white; padding:4rem 2rem;border-radius:30px;">
 
 
-        {% endfor %}
-      </table>
+    <h6> Sign up for the course</h6>
 
-    {% endif %}
+    <form method="POST">
+
+        {{ form.as_p }}
+        {% csrf_token %}
+
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+    </div></div>
   </body>
 </html>
